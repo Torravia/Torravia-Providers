@@ -9,7 +9,7 @@ from urllib.parse import urlparse
 from check_search_provider import check_metadata
 
 ROOT = Path(__file__).resolve().parents[1]
-RAW_ROOT = 'https://raw.githubusercontent.com/DavidAGInnovation/Torravia-Providers/main/'
+RAW_ROOT = 'https://raw.githubusercontent.com/Torravia/Torravia-Providers/main/'
 
 
 def validate(root=ROOT):

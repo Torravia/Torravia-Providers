@@ -1,6 +1,6 @@
 # Torravia community providers
 
-A separate catalog for community search providers used by [Torravia](https://github.com/DavidAGInnovation/Torravia).
+A separate catalog for community search providers used by [Torravia](https://github.com/Torravia/Torravia).
 Provider implementations and catalog contributions belong here, outside the client repository and its releases.
 
 Academic Torrents remains built into Torravia and enabled by default. The initial
@@ -53,7 +53,7 @@ Catalog shape (the example is not an actual catalog entry):
         "description": "Search a research index.",
         "homepage": "https://example.org/"
       },
-      "scriptURL": "https://raw.githubusercontent.com/DavidAGInnovation/Torravia-Providers/main/providers/org.example.research/1.0.0/provider.py",
+      "scriptURL": "https://raw.githubusercontent.com/Torravia/Torravia-Providers/main/providers/org.example.research/1.0.0/provider.py",
       "sha256": "<64 lowercase hexadecimal characters>"
     }
   ]
@@ -67,10 +67,10 @@ A changed hash or metadata requires renewed user approval, regardless of version
 
 ## Maintenance
 
-This repository starts under DavidAGInnovation; community contributions are welcome
+This repository currently belongs to the Torravia organization; community contributions are welcome
 through pull requests. Publication requires a maintainer merge. Community governance
 and additional maintainers can be established separately; catalog publication does
 not give contributors access to the Torravia client repository or its releases.
 
 Reports about a provider belong here. Client UI, catalog loading, runner bugs, and
-Academic Torrents changes belong in the [client repository](https://github.com/DavidAGInnovation/Torravia).
+Academic Torrents changes belong in the [client repository](https://github.com/Torravia/Torravia).
