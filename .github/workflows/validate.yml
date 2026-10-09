@@ -1,0 +1,28 @@
+name: Validate community catalog
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  catalog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python3 scripts/check_catalog.py
+      - run: python3 scripts/test_catalog.py
+      - name: Preserve published provider versions
+        if: github.event_name == 'pull_request'
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          if git diff --name-status "$BASE_SHA" -- providers/ | awk '$1 != "A" { found = 1 } END { exit !found }'; then
+            echo 'Published provider folders are immutable. Add a new version folder.'
+            exit 1
+          fi
